@@ -56,7 +56,5 @@ public class US02_BorrowedBooks {
         // close DB connection
         // DB_Util.destroy(); // ==> connection will be closed ny @db HOOKS
 
-
     }
-
 }

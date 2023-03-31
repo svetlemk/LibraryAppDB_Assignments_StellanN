@@ -5,6 +5,7 @@ Feature: As a librarian, I want to know borrowed books number
   @US02_Vasyl
   @ui @db
 
+
   # Ctrt+Shift+F ==> look where Tag @ was used
 
   Scenario: verify the total amount of borrowed books

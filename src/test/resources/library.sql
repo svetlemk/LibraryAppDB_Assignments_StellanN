@@ -10,13 +10,13 @@ select count(distinct id) from users;
 -- RESULT --> MANUALLY IT IS PASSED
 
 
------- US02 VASYL ----------------------
+-- US02 VASYL ---------------------
 select * from users;
 
 SELECT count(book_id) from book_borrow
 WHERE returned_date IS NULL;
 
-----------------------------------------
+-- -----------------------------------
 
 
 

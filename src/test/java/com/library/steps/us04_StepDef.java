@@ -21,6 +21,7 @@ public class us04_StepDef {
     public void the_user_searches_for_book(String name) {
         bookName = name;
         bookPage = new BookPage();
+        BrowserUtil.waitFor(3);
         bookPage.search.sendKeys(bookName);
 
     }
@@ -28,7 +29,7 @@ public class us04_StepDef {
     @When("the user clicks edit book button")
     public void the_user_clicks_edit_book_button() {
         bookPage = new BookPage();
-        BrowserUtil.waitForClickablility(bookPage.editBook(bookName), 5).click();
+        BrowserUtil.waitForClickablility(bookPage.editBook(bookName), 10).click();
         BrowserUtil.waitFor(3);
 
     }

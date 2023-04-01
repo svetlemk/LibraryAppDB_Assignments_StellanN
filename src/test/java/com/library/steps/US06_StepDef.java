@@ -1,20 +1,15 @@
 package com.library.steps;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import com.library.pages.LoginPage;
+import com.library.utility.BrowserUtil;
+import io.cucumber.java.en.* ;
+//import io.cucumber.java.en.Then;
+//import io.cucumber.java.en.When;
+
+import javax.security.auth.login.LoginContext;
 
 public class US06_StepDef {
-    @Given("the {string} on the home page")
-    public void the_on_the_home_page(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Given("the user navigates to {string} page")
-    public void the_user_navigates_to_page(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
     @When("the librarian click to add book")
     public void the_librarian_click_to_add_book() {
         // Write code here that turns the phrase above into concrete actions

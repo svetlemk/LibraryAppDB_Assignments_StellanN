@@ -17,12 +17,6 @@ public class US02_BorrowedBooks {
     String actualBorrowedBooksNumber;
 
 
-    @Given("the {string} on the home page")
-    public void the_on_the_home_page(String user) {
-        BrowserUtil.waitFor(1);
-        loginPage.login(user);
-    }
-
 
     @When("the librarian gets borrowed books number")
     public void the_librarian_gets_borrowed_books_number() {

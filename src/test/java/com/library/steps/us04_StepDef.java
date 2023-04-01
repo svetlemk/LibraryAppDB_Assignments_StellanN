@@ -16,18 +16,6 @@ import java.util.List;
 public class us04_StepDef {
     BookPage bookPage;
 
-    @Given("the {string} on the home page")
-    public void the_on_the_home_page(String string) {
-
-    }
-
-    @Given("the user navigates to {string} page")
-    public void the_user_navigates_to_page(String moduleName) {
-        bookPage = new BookPage();
-        bookPage.navigateModule(moduleName);
-        BrowserUtil.waitFor(1);
-
-    }
     String bookName;
     @When("the user searches for {string} book")
     public void the_user_searches_for_book(String name) {

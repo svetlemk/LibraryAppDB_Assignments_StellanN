@@ -13,33 +13,13 @@ import java.util.List;
 
 public class US03_StepDef_VP {
 
-
     BookPage bookPage;
-    LoginPage loginPage = new LoginPage();
-
-
-    @Given("the {string} on the home page")
-    public void the_on_the_home_page(String user) {
-            loginPage.login(user);
-            BrowserUtil.waitFor(2);
-    }
-
-
-
-
-    @When("the user navigates to {string} page")
-    public void the_user_navigates_to_page(String moduleName) {
-            bookPage=new BookPage();
-            bookPage.navigateModule(moduleName);
-            BrowserUtil.waitFor(1);
-    }
-
-
-
     List<String> actualCategoryList ;
 
     @When("the user clicks book categories")
     public void the_user_clicks_book_categories() {
+            bookPage = new BookPage();
+
             actualCategoryList = BrowserUtil.getAllSelectOptions(bookPage.mainCategoryElement);
             System.out.println("actualCategoryList = " + actualCategoryList);
             actualCategoryList.remove(0);
@@ -47,10 +27,6 @@ public class US03_StepDef_VP {
             System.out.println("actualCategoryList = " + actualCategoryList);
 
     }
-
-
-
-
 
     @Then("verify book categories must match book_categories table from db")
     public void verify_book_categories_must_match_book_categories_table_from_db() {
@@ -61,14 +37,6 @@ public class US03_StepDef_VP {
         //compare UI vs DB
         Assert.assertEquals(expectedCategoryList, actualCategoryList);
     }
-
-
-
-
-
-
-
-
 
 
 

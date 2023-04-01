@@ -1,14 +1,11 @@
 package com.library.steps;
 
-import com.library.pages.LoginPage;
-import com.library.utility.BrowserUtil;
 import io.cucumber.java.en.* ;
 //import io.cucumber.java.en.Then;
 //import io.cucumber.java.en.When;
 
-import javax.security.auth.login.LoginContext;
 
-public class US06_StepDef {
+public class US06_StepDef_lana {
 
     @When("the librarian click to add book")
     public void the_librarian_click_to_add_book() {

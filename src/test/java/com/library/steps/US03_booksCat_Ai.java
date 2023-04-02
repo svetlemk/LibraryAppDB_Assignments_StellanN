@@ -17,41 +17,41 @@ public class US03_booksCat_Ai {
     LoginPage loginPage = new LoginPage();
 
     @Given("the {string} on the home page")
-    public void theOnTheHomePage(String userType) {
-        loginPage.login(userType);
+    public void theOnTheHomePage(String userType2) {
+        loginPage.login(userType2);
     }
     @When("the user navigates to {string} page")
-    public void theUserNavigatesToPage(String moduleName) {
+    public void theUserNavigatesToPage(String moduleName2) {
         bookPage = new BookPage();
-        bookPage.navigateModule(moduleName);
+        bookPage.navigateModule(moduleName2);
         BrowserUtil.waitFor(1);
 
     }
-    List<String> actualCategoryList;
+    List<String> actualCategoryList2;
     @And("the user clicks book categories")
     public void theUserClicksBookCategories() {
 
         bookPage.mainCategoryElement.click();
-        actualCategoryList = BrowserUtil.getAllSelectOptions(bookPage.mainCategoryElement);
+        actualCategoryList2 = BrowserUtil.getAllSelectOptions(bookPage.mainCategoryElement);
 
-        System.out.println("actualCategoryList = "+ actualCategoryList);
+        System.out.println("actualCategoryList2 = "+ actualCategoryList2);
 
-        actualCategoryList.remove(0);
+        actualCategoryList2.remove(0);
 
         System.out.println("---------AFTER REMOVE FIRST ONE-----------");
-        System.out.println("actualCategoryList = " + actualCategoryList);
+        System.out.println("actualCategoryList2 = " + actualCategoryList2);
 
     }
     @Then("verify book categories must match book_categories table from db")
     public void verifyBookCategoriesMustMatchBook_categoriesTableFromDb() {
 
-        DB_Util.runQuery("select name from book_categories");
+        DB_Util.runQuery("select name from book_categories2");
 
-        List<String>expectedCategoryList = DB_Util.getColumnDataAsList(1);
+        List<String>expectedCategoryList2 = DB_Util.getColumnDataAsList(1);
 
-        System.out.println("expectedCategoryList = "+ expectedCategoryList);
+        System.out.println("expectedCategoryList2 = "+ expectedCategoryList2);
 
-        Assert.assertEquals(expectedCategoryList,actualCategoryList);
+        Assert.assertEquals(expectedCategoryList2,actualCategoryList2);
     }
 
 

@@ -17,11 +17,11 @@ public class US03_StepDef_Ai {
     LoginPage loginPage = new LoginPage();
 
     @Given("the {string} on the home page")
-    public void theOnTheHomePage(String userType2) {
+    public void theOnTheHomePage_Ai(String userType2) {
         loginPage.login(userType2);
     }
     @When("the user navigates to {string} page")
-    public void theUserNavigatesToPage(String moduleName2) {
+    public void theUserNavigatesToPage_Ai(String moduleName2) {
         bookPage = new BookPage();
         bookPage.navigateModule(moduleName2);
         BrowserUtil.waitFor(1);
@@ -29,7 +29,7 @@ public class US03_StepDef_Ai {
     }
     List<String> actualCategoryList2;
     @And("the user clicks book categories")
-    public void theUserClicksBookCategories() {
+    public void theUserClicksBookCategories_Ai() {
 
         bookPage.mainCategoryElement.click();
         actualCategoryList2 = BrowserUtil.getAllSelectOptions(bookPage.mainCategoryElement);
@@ -43,7 +43,7 @@ public class US03_StepDef_Ai {
 
     }
     @Then("verify book categories must match book_categories table from db")
-    public void verifyBookCategoriesMustMatchBook_categoriesTableFromDb() {
+    public void verifyBookCategoriesMustMatchBook_categoriesTableFromDb_Ai() {
 
         DB_Util.runQuery("select name from book_categories2");
 

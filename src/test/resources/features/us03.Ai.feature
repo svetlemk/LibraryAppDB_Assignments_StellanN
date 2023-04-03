@@ -1,4 +1,4 @@
-@us03
+@us03_Ai
 Feature: Default
    @ui @db
    Scenario: US03_AC01_TC01_VP_Verify book categories with DB

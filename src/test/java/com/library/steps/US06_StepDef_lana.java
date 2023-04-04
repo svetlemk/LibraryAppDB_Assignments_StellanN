@@ -3,9 +3,11 @@ package com.library.steps;
 import com.library.pages.BookPage;
 import com.library.utility.DB_Util;
 import io.cucumber.java.en.* ;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
 import java.sql.ResultSet;
+import java.util.Map;
 //import io.cucumber.java.en.Then;
 //import io.cucumber.java.en.When;
 
@@ -17,7 +19,8 @@ public class US06_StepDef_lana {
        bookPage.addBook.click();
     }
     @When("the librarian enter book name {string}")
-    public void the_librarian_enter_book_name(String bookName) {
+    public void the_librarian_enter_book_name(String bookName)
+    {
         bookPage.bookName.sendKeys(bookName);
     }
     @When("the librarian enter ISBN {string}")
@@ -43,12 +46,19 @@ public class US06_StepDef_lana {
     }
     @Then("verify {string} message is displayed")
     public void verify_message_is_displayed(String message) {
-        bookPage.toastMessage.isDisplayed();
+        Assert.assertTrue(bookPage.toastMessage.isDisplayed());
     }
     @Then("verify {string} information must match with DB")
-    public void verify_information_must_match_with_db(String bookName) {
-        String query = "select name from books";
-        ResultSet expectedName = DB_Util.runQuery(query);
+    public void verify_information_must_match_with_db(String expectedBookName) {
+        String query = "select name, author, isbn from books\n" +
+                "where name = '"+expectedBookName+"'";;
+        DB_Util.runQuery(query);
+
+        Map<String, String> rowMap = DB_Util.getRowMap(1);
+
+        String actualBookName = rowMap.get("name");
+
+        Assert.assertEquals(expectedBookName,actualBookName);
 
 
 

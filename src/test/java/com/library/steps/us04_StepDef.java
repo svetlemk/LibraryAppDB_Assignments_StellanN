@@ -36,7 +36,7 @@ public class us04_StepDef {
 
     @Then("book information must match the Database")
     public void book_information_must_match_the_database() {
-        // bookName: global variable that can bu used in the query
+        // bookName: global variable that can be used in the query
         bookPage = new BookPage();
         String UI_book_Name = bookPage.bookName.getAttribute("value");
         String UI_author_Name = bookPage.author.getAttribute("value");

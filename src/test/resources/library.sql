@@ -6,6 +6,8 @@ select count(id) from users; --
 select count(distinct id) from users;
 -- 1855
 
+select name from books;
+
 
 -- RESULT --> MANUALLY IT IS PASSED
 

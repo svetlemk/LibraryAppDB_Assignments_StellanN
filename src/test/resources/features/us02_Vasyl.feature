@@ -2,7 +2,7 @@
 
 Feature: As a librarian, I want to know borrowed books number
 
-  @US02_Vasyl
+  @us02
   @ui @db
 
   # Ctrt+Shift+F ==> look where Tag @ was used
